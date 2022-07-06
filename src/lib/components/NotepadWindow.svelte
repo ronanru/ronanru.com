@@ -31,7 +31,6 @@
   on:close={() => dispatch('close')}
   on:mousedown={() => dispatch('mousedown')}
 >
-  {JSON.stringify(detail)}
   <div class="flex flex-col h-full">
     <div class="bg-zinc-200 dark:bg-zinc-900 py-2 px-4 rounded-lg mb-4 resize-none">
       <button on:click={saveFile}>Save</button>
