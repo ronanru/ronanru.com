@@ -1,0 +1,111 @@
+<script lang="ts">
+  import spworldsImage from '../../assets/projects/spworlds.webp';
+  import spdonateImage from '../../assets/projects/spdonate.webp';
+  import { mdiEmail, mdiDiscord, mdiGithub } from '@mdi/js';
+  import icon from '../../assets/icons/about-me.svg';
+  import { createEventDispatcher } from 'svelte';
+  import avatar from '../../assets/avatar.webp';
+  import BaseWindow from './BaseWindow.svelte';
+  import Icon from './Icon.svelte';
+
+  const dispatch = createEventDispatcher();
+
+  export let isOpen: boolean;
+</script>
+
+<BaseWindow
+  title="About Me"
+  {icon}
+  height={900}
+  width={700}
+  bind:isOpen
+  on:close={() => dispatch('close')}
+  on:mousedown={() => dispatch('mousedown')}
+>
+  <div class="max-w-lg flex flex-col gap-4 mx-auto">
+    <div class="flex gap-4 mt-8">
+      <img
+        src={avatar}
+        class="w-56 h-56 rounded-3xl shadow-lg border-black border float-left"
+        alt=""
+      />
+      <div class="space-y-2">
+        <h1 class="text-2xl font-bold">Hello, I'm Matvey!</h1>
+
+        <a class="flex gap-2 items-center" href="https://github.com/ronanru">
+          <Icon icon={mdiGithub} />
+          RonanRU
+        </a>
+        <button
+          class="flex gap-2 items-center text-[#5865F2]"
+          on:click={() => navigator.clipboard.writeText('Ronan#2587')}
+        >
+          <Icon icon={mdiDiscord} />
+          Ronan#2587
+        </button>
+        <a class="flex gap-2 items-center text-[#0088CC]" href="https://t.me/ryabchikovm">
+          <Icon
+            icon="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z"
+          />
+          @ryabchikovm
+        </a>
+        <a class="flex gap-2 items-center text-orange-600" href="mailto:ronanru@duck.com">
+          <Icon icon={mdiEmail} />
+          ronanru@duck.com
+        </a>
+      </div>
+    </div>
+    <p>
+      I'm a young and aspiring web developer from Russia 🇷🇺, with 4+ years of experience with the
+      newest web technologies and standards. In every project I like to focus my attention on speed
+      and security, making sure every page loads as fast as possible and every attack vector is
+      accounted for.
+    </p>
+    <h1 class="text-2xl font-bold">My Skills</h1>
+    <p>Programming Languages: JavaScript, TypeScript, Python, Java, Bash.</p>
+    <p>Frontend: Svelte, SvelteKit, React, Preact, Fresh, Next.js, Vue, Nuxt.js, Electron.</p>
+    <p>Backend: node.js, deno.</p>
+    <p>Databases: PostgreSQL, MySQL, MondoDB, Firebase Firestore, redis.</p>
+    <p>Other Technologies: Docker, git, vim.</p>
+    <p>Non technical: Video editing, Image editing.</p>
+    <p>Languages: English, Russian.</p>
+    <h1 class="text-2xl font-bold">My other projects</h1>
+    <div class="flex gap-2">
+      <img src={spworldsImage} height="270" width="480" class="w-48 aspect-video rounded" alt="" />
+      <div>
+        <h2 class="text-xl font-bold">
+          <a href="https://spworlds.ru">SPWorlds</a>
+          <span
+            class="font-normal text-sm text-green-800 border-green-800 border-2 p-1 rounded-full"
+          >
+            Backend
+          </span>
+          <span
+            class="font-normal text-sm text-purple-800 border-purple-800 border-2 p-1 rounded-full"
+          >
+            Frontend
+          </span>
+        </h2>
+
+        <p>
+          A website for a minecraft server network with payments and social media functionality. The
+          site is installable PWA.
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <img src={spdonateImage} height="270" width="480" class="w-48 aspect-video rounded" alt="" />
+      <div>
+        <h2 class="text-xl font-bold">
+          <a href="https://spdonate.ronanru.dev">SPDonate</a>
+          <span
+            class="font-normal text-sm text-green-800 border-green-800 border-2 p-1 rounded-full"
+          >
+            Backend
+          </span>
+        </h2>
+        <p>A website for streamers to collect donations with real-time alerts.</p>
+      </div>
+    </div>
+  </div>
+</BaseWindow>
