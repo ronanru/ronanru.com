@@ -11,6 +11,7 @@
   import minesweeperIcon from './assets/icons/minesweeper.svg';
   import { mdiMenu, mdiWifi, mdiVolumeHigh } from '@mdi/js';
   import StartMenu from './lib/components/StartMenu.svelte';
+  import Calendar from './lib/components/Calendar.svelte';
   import { onDestroy, onMount, setContext } from 'svelte';
   import settingsIcon from './assets/icons/settings.svg';
   import terminalIcon from './assets/icons/terminal.svg';
@@ -41,12 +42,16 @@
     ),
     isMounted = false,
     isStartMenuOpen = false,
+    isCalendarOpen = false,
     windows: WindowData[] = [],
     wallpaper;
 
   const generateId = () =>
       'crypto' in window ? crypto.randomUUID() : Math.random().toString(36).substring(2),
-    handleClick = e => !e.target.closest('.startmenu') && (isStartMenuOpen = false),
+    handleClick = e => {
+      if (!e.target.closest('.startmenu')) isStartMenuOpen = false;
+      if (!e.target.closest('.calendar')) isCalendarOpen = false;
+    },
     closeWindow = (id: string) => {
       windows = windows.map(w => (w.id === id ? { ...w, isOpen: !w.isOpen } : w));
       setTimeout(() => (windows = windows.filter(w => w.id !== id)), 500);
@@ -121,9 +126,15 @@
       >
         <Icon icon={mdiWifi} size={0} />
       </button>
-      <button class="text-center hover:bg-blue-100 dark:hover:bg-blue-900 p-2">{time}</button>
+      <button
+        on:click={() => (isCalendarOpen = !isCalendarOpen)}
+        class="calendar text-center hover:bg-blue-100 dark:hover:bg-blue-900 rounded-t-lg p-2"
+      >
+        {time}
+      </button>
     </nav>
     <StartMenu bind:isOpen={isStartMenuOpen} {openWindow} />
+    <Calendar bind:isOpen={isCalendarOpen} />
     {#each windows as window (window.id)}
       <svelte:component
         this={{
