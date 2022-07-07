@@ -16,7 +16,11 @@
     {/each}
     <span style:grid-column="1 / {new Date(date.getFullYear(), date.getMonth(), 1).getDay()}" />
     {#each [...new Array(new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()).keys()] as day}
-      <span class="p-1 rounded-lg" class:bg-blue-800={day === date.getDate() - 1}>{day + 1}</span>
+      <span
+        class="p-1 rounded-lg"
+        class:dark:bg-blue-800={day === date.getDate() - 1}
+        class:bg-blue-200={day === date.getDate() - 1}>{day + 1}</span
+      >
     {/each}
   </section>
 {/if}
