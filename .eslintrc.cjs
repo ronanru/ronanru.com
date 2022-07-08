@@ -21,7 +21,6 @@ module.exports = {
     yoda: 'error',
     eqeqeq: 'error',
     camelcase: 'error',
-    complexity: 'error',
     'prefer-const': 'error',
     'prefer-template': 'error',
     'object-shorthand': 'warn',

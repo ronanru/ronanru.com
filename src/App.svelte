@@ -1,6 +1,7 @@
 <script lang="ts">
   import MinesweeperWindow from './lib/components/MinesweeperWindow.svelte';
   import FileManagerWindow from './lib/components/FileManagerWindow.svelte';
+  import CalculatorWindow from './lib/components/CalculatorWindow.svelte';
   import TerminalWindow from './lib/components/TerminalWindow.svelte';
   import SettingsWindow from './lib/components/SettingsWindow.svelte';
   import WelcomeWindow from './lib/components/WelcomeWindow.svelte';
@@ -9,6 +10,7 @@
   import BootOverlay from './lib/components/BootOverlay.svelte';
   import fileManagerIcon from './assets/icons/file-manager.svg';
   import minesweeperIcon from './assets/icons/minesweeper.svg';
+  import calculatorIcon from './assets/icons/calculator.svg';
   import { mdiMenu, mdiWifi, mdiVolumeHigh } from '@mdi/js';
   import StartMenu from './lib/components/StartMenu.svelte';
   import Calendar from './lib/components/Calendar.svelte';
@@ -31,7 +33,8 @@
       | 'settings'
       | 'minesweeper'
       | 'filemanager'
-      | 'notepad';
+      | 'notepad'
+      | 'calculator';
     detail?: string[] | null;
   }
 
@@ -102,7 +105,8 @@
               settings: settingsIcon,
               minesweeper: minesweeperIcon,
               filemanager: fileManagerIcon,
-              notepad: nodepadIcon
+              notepad: nodepadIcon,
+              calculator: calculatorIcon
             }[window.type]}
             width="40"
             height="40"
@@ -136,7 +140,8 @@
           settings: SettingsWindow,
           minesweeper: MinesweeperWindow,
           filemanager: FileManagerWindow,
-          notepad: NotepadWindow
+          notepad: NotepadWindow,
+          calculator: CalculatorWindow
         }[window.type]}
         bind:isOpen={window.isOpen}
         detail={window.detail}

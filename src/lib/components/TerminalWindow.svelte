@@ -14,7 +14,6 @@
   const dispatch = createEventDispatcher(),
     openWindow = getContext<(type: string) => void>('openWindow'),
     history = [],
-    // eslint-disable-next-line complexity
     handleSubmit = () => {
       if (value === '$ ') return;
       historyIndex = -1;

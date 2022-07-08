@@ -47,28 +47,36 @@
       }
       if (resizing) {
         if (resizing.includes('r'))
-          width = Math.min(Math.max(width + e.clientX - lastX, 500), innerWidth - x);
+          width = Math.min(Math.max(width + e.clientX - lastX, 360), innerWidth - x);
         else if (resizing.includes('l')) {
           const oldWidth = width;
-          width = Math.min(Math.max(width + lastX - e.clientX, 500), x + width - 64);
+          width = Math.min(Math.max(width + lastX - e.clientX, 360), x + width - 64);
           x += oldWidth - width;
         }
         if (resizing.includes('b'))
-          height = Math.min(Math.max(height + e.clientY - lastY, 300), innerHeight - y);
+          height = Math.min(Math.max(height + e.clientY - lastY, 360), innerHeight - y);
         else if (resizing.includes('t')) {
           const oldHeight = height;
-          height = Math.min(Math.max(height + lastY - e.clientY, 300), y + height);
+          height = Math.min(Math.max(height + lastY - e.clientY, 360), y + height);
           y += oldHeight - height;
         }
         lastX = e.clientX;
         lastY = e.clientY;
         return;
       }
-      mouseNear = `${Math.abs(e.clientY - y) < 5 ? 't' : ''}${
-        Math.abs(e.clientY - y - height) < 5 ? 'b' : ''
-      }${Math.abs(e.clientX - x) < 5 ? 'l' : ''}${
-        Math.abs(e.clientX - x - width) < 5 ? 'r' : ''
-      }` as ResizeMode;
+      mouseNear = '';
+
+      mouseNear =
+        e.clientY > y - 5 &&
+        e.clientY < y + height + 5 &&
+        e.clientX > x - 5 &&
+        e.clientX < x + width + 5
+          ? (`${Math.abs(e.clientY - y) < 5 ? 't' : ''}${
+              Math.abs(e.clientY - y - height) < 5 ? 'b' : ''
+            }${Math.abs(e.clientX - x) < 5 ? 'l' : ''}${
+              Math.abs(e.clientX - x - width) < 5 ? 'r' : ''
+            }` as ResizeMode)
+          : '';
     },
     handleWindowMousedown = (e: MouseEvent) => {
       resizing = mouseNear;

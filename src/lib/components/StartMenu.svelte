@@ -1,6 +1,7 @@
 <script lang="ts">
   import fileManagerIcon from '../../assets/icons/file-manager.svg';
   import minesweeperIcon from '../../assets/icons/minesweeper.svg';
+  import calculatorIcon from '../../assets/icons/calculator.svg';
   import settingsIcon from '../../assets/icons/settings.svg';
   import terminalIcon from '../../assets/icons/terminal.svg';
   import aboutMeIcon from '../../assets/icons/about-me.svg';
@@ -12,11 +13,12 @@
   export let isOpen: boolean, openWindow: (type: string) => void;
 
   const programs = [
-    { name: 'filemanager', title: 'File Manager', icon: fileManagerIcon },
-    { name: 'notepad', title: 'Notepad', icon: nodepadIcon },
     { name: 'welcome', title: 'Welcome', icon: welcomeIcon },
     { name: 'aboutme', title: 'About Me', icon: aboutMeIcon },
     { name: 'terminal', title: 'Terminal', icon: terminalIcon },
+    { name: 'filemanager', title: 'File Manager', icon: fileManagerIcon },
+    { name: 'notepad', title: 'Notepad', icon: nodepadIcon },
+    { name: 'calculator', title: 'Calculator', icon: calculatorIcon },
     { name: 'minesweeper', title: 'Minesweeper', icon: minesweeperIcon },
     { name: 'settings', title: 'Settings', icon: settingsIcon }
   ];
