@@ -20,7 +20,7 @@
 <svelte:window on:keydown={handleKeydown} bind:innerWidth />
 
 {#if innerWidth < 1000}
-  <p class="fixed inset-0 grid place-items-center text-xl text-center p-4">
+  <p class="fixed inset-0 grid place-items-center p-4 text-center text-xl">
     Sorry, this website doesn't work on mobile.
   </p>
 {:else if isBooted}
@@ -28,16 +28,14 @@
 {:else}
   <div
     out:fade={{ duration: 1000 }}
-    class="h-screen w-screen bg-black absolute inset-0 text-white flex flex-col justify-between font-mono cursor-wait"
-  >
+    class="absolute inset-0 flex h-screen w-screen cursor-wait flex-col justify-between bg-black font-mono text-white">
     <div />
     <div class="flex flex-col items-center">
       <div>
         <h1 class="text-2xl">Booting...</h1>
         <div
-          class="w-80 transition-transform h-10 bg-white duration-1000 scale-x-0 origin-left ease-linear"
-          class:transform-none={isMounted}
-        />
+          class="h-10 w-80 origin-left scale-x-0 bg-white transition-transform duration-1000 ease-linear"
+          class:transform-none={isMounted} />
       </div>
     </div>
     <div class="flex justify-end p-4">

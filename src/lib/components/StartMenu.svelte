@@ -25,22 +25,19 @@
 {#if isOpen}
   <section
     transition:scale
-    class="startmenu absolute top-0 left-16 p-2 dark:bg-zinc-900 bg-white bg-opacity-80 dark:bg-opacity-80 rounded-br-lg z-[10000] grid gap-2 backdrop-blur origin-top-left"
-  >
+    class="startmenu absolute top-0 left-16 z-[10000] grid origin-top-left gap-2 rounded-br-lg bg-white bg-opacity-80 p-2 backdrop-blur dark:bg-zinc-900 dark:bg-opacity-80">
     {#each programs as program}
       <button
         on:click={() => openWindow(program.name)}
-        class="flex gap-4 items-center justify-start text-xl hover:bg-blue-200 dark:hover:bg-blue-900 py-2 px-4 rounded-lg"
-      >
-        <img src={program.icon} width="40" height="40" class="w-10 h-10" alt="" />
+        class="flex items-center justify-start gap-4 rounded-lg py-2 px-4 text-xl hover:bg-blue-200 dark:hover:bg-blue-900">
+        <img src={program.icon} width="40" height="40" class="h-10 w-10" alt="" />
         {program.title}
       </button>
     {/each}
     <button
       on:click={() => location.reload()}
-      class="flex gap-4 items-center justify-start text-xl hover:bg-blue-200 dark:hover:bg-blue-900 py-2 px-4 rounded-lg"
-    >
-      <img src={rebootIcon} width="40" height="40" class="w-10 h-10" alt="" />
+      class="flex items-center justify-start gap-4 rounded-lg py-2 px-4 text-xl hover:bg-blue-200 dark:hover:bg-blue-900">
+      <img src={rebootIcon} width="40" height="40" class="h-10 w-10" alt="" />
       Reboot
     </button>
   </section>

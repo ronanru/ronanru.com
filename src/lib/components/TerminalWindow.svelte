@@ -7,13 +7,14 @@
   let input: HTMLInputElement,
     form: HTMLFormElement,
     dir = [],
-    history = [],
     historyIndex = -1,
     output = 'Type `help` to see the list of available commands\n',
     value = '$ ';
 
   const dispatch = createEventDispatcher(),
     openWindow = getContext<(type: string) => void>('openWindow'),
+    history = [],
+    // eslint-disable-next-line complexity
     handleSubmit = () => {
       if (value === '$ ') return;
       historyIndex = -1;
@@ -147,22 +148,19 @@
   on:mousedown={() => {
     dispatch('mousedown');
     input.focus();
-  }}
->
+  }}>
   <form
     bind:this={form}
     on:submit|preventDefault={handleSubmit}
-    class="flex flex-col justify-start h-full pb-4 overflow-auto"
-  >
+    class="flex h-full flex-col justify-start overflow-auto pb-4">
     <pre class="whitespace-pre-wrap">{output}</pre>
     <input
       bind:this={input}
       on:keydown={handleKeydown}
       type="text"
-      class="outline-none pb-2 font-mono bg-transparent"
+      class="bg-transparent pb-2 font-mono outline-none"
       bind:value
-      on:input={() => !value.startsWith('$ ') && (value = '$ ')}
-    />
+      on:input={() => !value.startsWith('$ ') && (value = '$ ')} />
   </form>
 </BaseWindow>
 

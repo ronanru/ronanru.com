@@ -29,12 +29,11 @@
   width={600}
   bind:isOpen
   on:close={() => dispatch('close')}
-  on:mousedown={() => dispatch('mousedown')}
->
-  <div class="flex flex-col h-full">
-    <div class="bg-zinc-200 dark:bg-zinc-900 py-2 px-4 rounded-lg mb-4 resize-none">
+  on:mousedown={() => dispatch('mousedown')}>
+  <div class="flex h-full flex-col">
+    <div class="mb-4 resize-none rounded-lg bg-zinc-200 py-2 px-4 dark:bg-zinc-900">
       <button on:click={saveFile}>Save</button>
     </div>
-    <textarea bind:value class="w-[calc(100%_-_1rem)] h-full flex-1 mx-2 bg-transparent" />
+    <textarea bind:value class="mx-2 h-full w-[calc(100%_-_1rem)] flex-1 bg-transparent" />
   </div>
 </BaseWindow>

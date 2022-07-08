@@ -20,36 +20,32 @@
   width={700}
   bind:isOpen
   on:close={() => dispatch('close')}
-  on:mousedown={() => dispatch('mousedown')}
->
-  <div class="max-w-lg flex flex-col gap-4 mx-auto">
-    <div class="flex gap-4 mt-8">
+  on:mousedown={() => dispatch('mousedown')}>
+  <div class="mx-auto flex max-w-lg flex-col gap-4">
+    <div class="mt-8 flex gap-4">
       <img
         src={avatar}
-        class="w-56 h-56 rounded-3xl shadow-lg border-black border float-left"
-        alt=""
-      />
+        class="float-left h-56 w-56 rounded-3xl border border-black shadow-lg"
+        alt="" />
       <div class="space-y-2">
         <h1 class="text-2xl font-bold">Hello, I'm Matvey!</h1>
 
-        <a class="flex gap-2 items-center" href="https://github.com/ronanru">
+        <a class="flex items-center gap-2" href="https://github.com/ronanru">
           <Icon icon={mdiGithub} />
           RonanRU
         </a>
         <button
-          class="flex gap-2 items-center text-[#5865F2]"
-          on:click={() => navigator.clipboard.writeText('Ronan#2587')}
-        >
+          class="flex items-center gap-2 text-[#5865F2]"
+          on:click={() => navigator.clipboard.writeText('Ronan#2587')}>
           <Icon icon={mdiDiscord} />
           Ronan#2587
         </button>
-        <a class="flex gap-2 items-center text-[#0088CC]" href="https://t.me/ryabchikovm">
+        <a class="flex items-center gap-2 text-[#0088CC]" href="https://t.me/ryabchikovm">
           <Icon
-            icon="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z"
-          />
+            icon="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
           @ryabchikovm
         </a>
-        <a class="flex gap-2 items-center text-orange-600" href="mailto:ronanru@duck.com">
+        <a class="flex items-center gap-2 text-orange-600" href="mailto:ronanru@duck.com">
           <Icon icon={mdiEmail} />
           ronanru@duck.com
         </a>
@@ -71,18 +67,16 @@
     <p>Languages: English, Russian.</p>
     <h1 class="text-2xl font-bold">My other projects</h1>
     <div class="flex gap-2">
-      <img src={spworldsImage} height="270" width="480" class="w-48 aspect-video rounded" alt="" />
+      <img src={spworldsImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
       <div>
         <h2 class="text-xl font-bold">
           <a href="https://spworlds.ru">SPWorlds</a>
           <span
-            class="font-normal text-sm text-green-800 border-green-800 border-2 p-1 rounded-full"
-          >
+            class="rounded-full border-2 border-green-800 p-1 text-sm font-normal text-green-800">
             Backend
           </span>
           <span
-            class="font-normal text-sm text-purple-800 border-purple-800 border-2 p-1 rounded-full"
-          >
+            class="rounded-full border-2 border-purple-800 p-1 text-sm font-normal text-purple-800">
             Frontend
           </span>
         </h2>
@@ -94,13 +88,12 @@
       </div>
     </div>
     <div class="flex gap-2">
-      <img src={spdonateImage} height="270" width="480" class="w-48 aspect-video rounded" alt="" />
+      <img src={spdonateImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
       <div>
         <h2 class="text-xl font-bold">
           <a href="https://spdonate.ronanru.dev">SPDonate</a>
           <span
-            class="font-normal text-sm text-green-800 border-green-800 border-2 p-1 rounded-full"
-          >
+            class="rounded-full border-2 border-green-800 p-1 text-sm font-normal text-green-800">
             Backend
           </span>
         </h2>

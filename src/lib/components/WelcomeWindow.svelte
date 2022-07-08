@@ -16,9 +16,8 @@
   width={600}
   bind:isOpen
   on:close={() => dispatch('close')}
-  on:mousedown={() => dispatch('mousedown')}
->
-  <div class="flex flex-col justify-center items-center h-full text-center gap-4">
+  on:mousedown={() => dispatch('mousedown')}>
+  <div class="flex h-full flex-col items-center justify-center gap-4 text-center">
     <h1 class="text-2xl font-bold">Welcome to my site! 👋</h1>
     <p>Hello, my name is Matvey and I'm a full-stack web developer.</p>
     <p>
@@ -27,7 +26,6 @@
     </p>
     <button
       on:click={() => openWindow('aboutme')}
-      class="p-4 rounded-md bg-blue-600 hover:bg-blue-700 text-white">About me</button
-    >
+      class="rounded-md bg-blue-600 p-4 text-white hover:bg-blue-700">About me</button>
   </div>
 </BaseWindow>

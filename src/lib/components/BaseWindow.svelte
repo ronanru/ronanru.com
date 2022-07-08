@@ -91,7 +91,7 @@
       '': ''
     };
   $: if (isDragging === true) isMaximized = false;
-  $: if (isDragging === false && y == 0) isMaximized = true;
+  $: if (isDragging === false && y === 0) isMaximized = true;
 </script>
 
 <svelte:window
@@ -100,14 +100,13 @@
   on:mouseleave={() => (isDragging = false)}
   on:mouseup={handleWindowMouseup}
   bind:innerHeight
-  bind:innerWidth
-/>
+  bind:innerWidth />
 
 {#if isOpen}
   <section
     transition:fade
     on:mousedown={() => dispatch('mousedown')}
-    class="bg-white dark:bg-zinc-800 absolute shadow-md transition-opacity {mouseNearClass[
+    class="absolute bg-white shadow-md transition-opacity dark:bg-zinc-800 {mouseNearClass[
       resizing || mouseNear
     ]}"
     class:cursor-move={isDragging}
@@ -116,39 +115,34 @@
     style:top="{isMaximized ? 0 : y}px"
     style:left="{isMaximized ? 64 : x}px"
     style:height={isMaximized ? 'auto' : `${height}px`}
-    style:width={isMaximized ? 'auto' : `${width}px`}
-  >
+    style:width={isMaximized ? 'auto' : `${width}px`}>
     <div
-      class="bg-zinc-100 rounded-t-lg py-1 px-2 flex dark:bg-zinc-900"
+      class="flex rounded-t-lg bg-zinc-100 py-1 px-2 dark:bg-zinc-900"
       on:mousedown={handleHeaderMousedown}
-      on:dblclick={() => (isMaximized = !isMaximized)}
-    >
-      <img src={icon} alt="" width="24" height="24" class="w-6 h-6 mr-2" />
+      on:dblclick={() => (isMaximized = !isMaximized)}>
+      <img src={icon} alt="" width="24" height="24" class="mr-2 h-6 w-6" />
       {title}
       <div class="flex-1" />
       <button
         on:click={() => (isOpen = false)}
-        class="translate-y-1 text-zinc-500  hover:text-green-500 transition-colors"
-        title="Minimize"
-      >
+        class="translate-y-1 text-zinc-500  transition-colors hover:text-green-500"
+        title="Minimize">
         <Icon icon={mdiWindowMinimize} size={0} />
       </button>
       <button
         on:click={() => (isMaximized = !isMaximized)}
-        class="text-zinc-500 hover:text-yellow-500 transition-colors"
-        title="Maximize"
-      >
+        class="text-zinc-500 transition-colors hover:text-yellow-500"
+        title="Maximize">
         <Icon icon={mdiWindowMaximize} size={0} />
       </button>
       <button
         on:click={() => dispatch('close')}
-        class="text-zinc-500 hover:text-red-500 transition-colors"
-        title="Close"
-      >
+        class="text-zinc-500 transition-colors hover:text-red-500"
+        title="Close">
         <Icon icon={mdiWindowClose} size={0} />
       </button>
     </div>
-    <div class="w-full h-[calc(100%_-_2rem)] p-4 overflow-auto">
+    <div class="h-[calc(100%_-_2rem)] w-full overflow-auto p-4">
       <slot />
     </div>
   </section>

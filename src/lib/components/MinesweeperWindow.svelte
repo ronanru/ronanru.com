@@ -68,11 +68,10 @@
   width={500}
   bind:isOpen
   on:close={() => dispatch('close')}
-  on:mousedown={() => dispatch('mousedown')}
->
-  <div class="flex flex-col justify-center items-center h-full text-center gap-4">
+  on:mousedown={() => dispatch('mousedown')}>
+  <div class="flex h-full flex-col items-center justify-center gap-4 text-center">
     {#if isGameFinished}
-      <button on:click={startGame} class="p-4 rounded-md bg-blue-600 hover:bg-blue-700 text-white">
+      <button on:click={startGame} class="rounded-md bg-blue-600 p-4 text-white hover:bg-blue-700">
         New game
       </button>
     {/if}
@@ -82,15 +81,14 @@
           <button
             on:click={() => openCell(i, j)}
             on:contextmenu|preventDefault={() => toggleFlag(i, j)}
-            class="w-8 h-8 border border-black dark:border-white font-bold grid place-items-center"
+            class="grid h-8 w-8 place-items-center border border-black font-bold dark:border-white"
             class:text-blue-600={cell.isOpen && cell.value === 1}
             class:text-green-600={cell.isOpen && cell.value === 2}
             class:text-yellow-600={cell.isOpen && cell.value === 3}
             class:text-purple-600={cell.isOpen && cell.value === 4}
             class:text-red-600={(cell.isOpen && cell.value > 4) || (cell.isFlagged && !cell.isOpen)}
             class:bg-zinc-200={!cell.isOpen}
-            class:dark:bg-zinc-600={!cell.isOpen}
-          >
+            class:dark:bg-zinc-600={!cell.isOpen}>
             {#if cell.isOpen}
               {#if cell.value === -1}
                 <Icon icon={mdiMine} size={0} />
