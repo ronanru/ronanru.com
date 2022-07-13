@@ -4,9 +4,9 @@
 
   let isBooted = /bot|crawler|spider|crawling/.test(navigator.userAgent),
     isMounted = false,
-    innerWidth;
+    innerWidth: number;
 
-  const handleKeydown = e =>
+  const handleKeydown = (e: KeyboardEvent) =>
     !isBooted &&
     e.code === 'F2' &&
     (window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');

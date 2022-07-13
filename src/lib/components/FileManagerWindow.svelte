@@ -16,13 +16,15 @@
       dir = d;
       selectedItem = null;
     },
-    openFile = file => {
+    openFile = (file: [string, string | object]) => {
       if (typeof file[1] === 'string') openWindow('notepad', [...dir, file[0]]);
       else dir = [...dir, file[0]];
       selectedItem = null;
     },
-    handleFileContextMenu = e => !e.target.closest('.file') && openContextMenu(e, null),
-    openContextMenu = (e, file) => (contextMenu = { x: e.layerX, y: e.layerY, file }),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    handleFileContextMenu = (e: any) => !e.target.closest('.file') && openContextMenu(e, null),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    openContextMenu = (e: any, file: string) => (contextMenu = { x: e.layerX, y: e.layerY, file }),
     createNewFile = () => {
       contextMenu = null;
       const name = prompt('Name of the file:');
@@ -44,7 +46,8 @@
       dir = dir;
       contextMenu = null;
     },
-    handleWindowClick = e => !e.target.closest('.contextmenu') && (contextMenu = null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    handleWindowClick = (e: any) => !e.target.closest('.contextmenu') && (contextMenu = null);
 
   let dir = [],
     selectedItem: string | null = null,

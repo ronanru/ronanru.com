@@ -33,8 +33,8 @@
               if (board[ii][jj].value === -1) board[i][j].value++;
         }
     },
-    toggleFlag = (i, j) => (board[i][j].isFlagged = !board[i][j].isFlagged),
-    openCell = (i, j) => {
+    toggleFlag = (i: number, j: number) => (board[i][j].isFlagged = !board[i][j].isFlagged),
+    openCell = (i: number, j: number) => {
       if (board.every(row => row.every(cell => !cell.isOpen)) && board[i][j].value !== 0) {
         startGame();
         openCell(i, j);

@@ -43,7 +43,7 @@
     isStartMenuOpen = false,
     isCalendarOpen = false,
     windows: WindowData[] = [],
-    wallpaper;
+    wallpaper: string;
 
   const interval = setInterval(
       () => (time = new Date().toLocaleTimeString('en-GB', { minute: 'numeric', hour: 'numeric' })),
@@ -51,7 +51,8 @@
     ),
     generateId = () =>
       'crypto' in window ? crypto.randomUUID() : Math.random().toString(36).substring(2),
-    handleClick = e => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    handleClick = (e: any) => {
       if (!e.target.closest('.startmenu')) isStartMenuOpen = false;
       if (!e.target.closest('.calendar')) isCalendarOpen = false;
     },

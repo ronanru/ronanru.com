@@ -13,12 +13,12 @@
     icon: string;
 
   let isDragging = false,
-    lastX,
-    lastY,
-    innerHeight,
-    innerWidth,
-    x,
-    y,
+    lastX: number,
+    lastY: number,
+    innerHeight: number,
+    innerWidth: number,
+    x: number,
+    y: number,
     isMaximized = false,
     mouseNear: ResizeMode = '',
     resizing: ResizeMode = '';

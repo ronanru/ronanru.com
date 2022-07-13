@@ -26,9 +26,10 @@ export const getFromPath = (path: string[]): Folder | string => {
     normalizePath(path).forEach(bit => (folder = folder[bit] as Folder));
     delete folder[name];
   },
-  createRecord = (path: string[], data) => {
-    const name = [...path].pop();
+  createRecord = (path: string[], data: Folder | string) => {
+    const pathCopy = [...path],
+      name = pathCopy.pop();
     let folder = filesystem;
-    normalizePath(path).forEach(bit => (folder = folder[bit] as Folder));
+    normalizePath(pathCopy).forEach(bit => (folder = folder[bit] as Folder));
     folder[name] = data;
   };
