@@ -1,5 +1,6 @@
 <script lang="ts">
   import spworldsImage from '../../assets/projects/spworlds.webp';
+  import filmanImage from '../../assets/projects/filman.webp';
   import spdonateImage from '../../assets/projects/spdonate.webp';
   import { mdiEmail, mdiDiscord, mdiGithub } from '@mdi/js';
   import icon from '../../assets/icons/about-me.svg';
@@ -85,6 +86,16 @@
           A website for a minecraft server network with payments and social media functionality. The
           site is installable PWA.
         </p>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <img src={filmanImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
+      <div>
+        <h2 class="text-xl font-bold">
+          <a href="https://github.com/ronanru/filman">Filman</a>
+        </h2>
+
+        <p>A TUI file manager for Linux created with Deno and TypeScript with 0 dependencies.</p>
       </div>
     </div>
     <div class="flex gap-2">

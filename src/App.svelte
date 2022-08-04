@@ -50,7 +50,9 @@
       60000
     ),
     generateId = () =>
-      'crypto' in window ? crypto.randomUUID() : Math.random().toString(36).substring(2),
+      'crypto' in window && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : Math.random().toString(36).substring(2),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     handleClick = (e: any) => {
       if (!e.target.closest('.startmenu')) isStartMenuOpen = false;
