@@ -1,7 +1,8 @@
 <script lang="ts">
+  import archexplorerImage from '../../assets/projects/archexplorer.webp';
   import spworldsImage from '../../assets/projects/spworlds.webp';
-  import filmanImage from '../../assets/projects/filman.webp';
   import spdonateImage from '../../assets/projects/spdonate.webp';
+  import filmanImage from '../../assets/projects/filman.webp';
   import { mdiEmail, mdiDiscord, mdiGithub } from '@mdi/js';
   import icon from '../../assets/icons/about-me.svg';
   import { createEventDispatcher } from 'svelte';
@@ -81,11 +82,32 @@
             Frontend
           </span>
         </h2>
-
         <p>
           A website for a minecraft server network with payments and social media functionality. The
           site is installable PWA.
         </p>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <img
+        src={archexplorerImage}
+        height="270"
+        width="480"
+        class="aspect-video w-48 rounded"
+        alt="" />
+      <div>
+        <h2 class="text-xl font-bold">
+          <a href="https://archexplorer.ronanru.dev">ArchExplorer</a>
+          <span
+            class="rounded-full border-2 border-green-800 p-1 text-sm font-normal text-green-800">
+            Backend
+          </span>
+          <span
+            class="rounded-full border-2 border-purple-800 p-1 text-sm font-normal text-purple-800">
+            Frontend
+          </span>
+        </h2>
+        <p>A search engine for Arch Linux packages with minimal client-side JavaScript.</p>
       </div>
     </div>
     <div class="flex gap-2">
@@ -94,7 +116,6 @@
         <h2 class="text-xl font-bold">
           <a href="https://github.com/ronanru/filman">Filman</a>
         </h2>
-
         <p>A TUI file manager for Linux created with Deno and TypeScript with 0 dependencies.</p>
       </div>
     </div>
