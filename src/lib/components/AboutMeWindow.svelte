@@ -54,10 +54,10 @@
       </div>
     </div>
     <p>
-      I'm a young and aspiring full-stack web developer from Russia 🇷🇺, with 4+ years of experience
-      with the newest web technologies and standards. In every project I like to focus my attention
-      on speed and security, making sure every page loads as fast as possible and every attack
-      vector is accounted for.
+      I'm a young and aspiring full-stack web developer with 4+ years of experience with the newest
+      web technologies and standards. In every project I like to focus my attention on speed and
+      security, making sure every page loads as fast as possible and every attack vector is
+      accounted for.
     </p>
     <h1 class="text-2xl font-bold">My Skills</h1>
     <p>Programming Languages: JavaScript, TypeScript, Python, Java, Bash.</p>
