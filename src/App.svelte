@@ -148,7 +148,6 @@
         }[window.type]}
         bind:isOpen={window.isOpen}
         detail={window.detail}
-        id={window.id}
         on:close={() => closeWindow(window.id)}
         on:mousedown={() => focusWindow(window.id)} />
     {/each}
