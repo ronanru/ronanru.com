@@ -10,7 +10,7 @@
 </script>
 
 <div class="mx-auto flex max-w-lg flex-col gap-4">
-  <div class="mt-8 flex gap-4">
+  <div class="mt-8 flex gap-4 flex-wrap">
     <img
       src={avatar}
       class="float-left h-56 w-56 rounded-3xl border border-black shadow-lg"
