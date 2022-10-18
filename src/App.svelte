@@ -86,7 +86,7 @@
     style:background-image="url({wallpaper})"
     on:click={handleClick}>
     <nav
-      class="absolute top-0 bottom-0 left-0 flex h-full w-16 -translate-x-16 flex-col items-center gap-2 bg-white bg-opacity-80 shadow-md backdrop-blur transition-transform duration-[1500ms] dark:bg-zinc-900 dark:bg-opacity-80"
+      class="absolute top-0 bottom-0 left-0 flex h-screen overflow-y-hidden w-16 -translate-x-16 flex-col items-center gap-2 bg-white bg-opacity-80 shadow-md backdrop-blur transition-transform duration-[1500ms] dark:bg-zinc-900 dark:bg-opacity-80"
       class:transform-none={isMounted}>
       <button
         on:click={() => (isStartMenuOpen = !isStartMenuOpen)}

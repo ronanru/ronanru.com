@@ -1,6 +1,7 @@
 <script lang="ts">
   import svelteFlipClockImage from '../../assets/projects/svelte-flip-clock.webp';
   import archexplorerImage from '../../assets/projects/archexplorer.webp';
+  import myfaqpageImage from '../../assets/projects/myfaqpage.webp';
   import spworldsImage from '../../assets/projects/spworlds.webp';
   import spdonateImage from '../../assets/projects/spdonate.webp';
   import filmanImage from '../../assets/projects/filman.webp';
@@ -53,6 +54,25 @@
   <p>Non technical: Video editing, Image editing.</p>
   <p>Languages: English, Russian.</p>
   <h1 class="text-2xl font-bold">My other projects</h1>
+  <div class="flex gap-2">
+    <img src={myfaqpageImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
+    <div>
+      <h2 class="text-xl font-bold">
+        <a href="https://spworlds.ru">My FAQ Page</a>
+        <span class="rounded-full border-2 border-green-800 p-1 text-sm font-normal text-green-800">
+          Backend
+        </span>
+        <span
+          class="rounded-full border-2 border-purple-800 p-1 text-sm font-normal text-purple-800">
+          Frontend
+        </span>
+      </h2>
+      <p>
+        A web app where anyone can create a beautiful FAQ page in minutes. I used new and trendy T3
+        stack for this site: Next.js, TypeScript, tRPC, Prisma.
+      </p>
+    </div>
+  </div>
   <div class="flex gap-2">
     <img src={spworldsImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
     <div>
