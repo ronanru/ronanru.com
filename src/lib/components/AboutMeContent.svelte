@@ -47,10 +47,13 @@
   </p>
   <h1 class="text-2xl font-bold">My Skills</h1>
   <p>Programming Languages: JavaScript, TypeScript, Python, Java, Bash.</p>
-  <p>Frontend: Svelte, SvelteKit, React, Preact, Fresh, Next.js, Vue, Nuxt.js, Electron.</p>
+  <p>
+    Frontend: Svelte, SvelteKit, React, Preact, Fresh, Next.js, Vue, Nuxt.js, Electron, TailwindCSS,
+    SASS.
+  </p>
   <p>Backend: node.js, deno.</p>
   <p>Databases: PostgreSQL, MySQL, MondoDB, Firebase Firestore, redis.</p>
-  <p>Other Technologies: Docker, git, vim.</p>
+  <p>Other Technologies: Docker, git, vim, tRPC.</p>
   <p>Non technical: Video editing, Image editing.</p>
   <p>Languages: English, Russian.</p>
   <h1 class="text-2xl font-bold">My other projects</h1>
