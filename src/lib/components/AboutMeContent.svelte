@@ -40,20 +40,19 @@
     </div>
   </div>
   <p>
-    I'm a young and aspiring full-stack web developer with 4+ years of experience with the newest
-    web technologies and standards. In every project I like to focus my attention on speed and
-    security, making sure every page loads as fast as possible and every attack vector is accounted
-    for.
+    I'm a young and aspiring full stack web developer with 4 years of experience with the newest web
+    technologies and standards. In every project I like to focus my attention on speed and security,
+    making sure every page loads as fast as possible and every attack vector is accounted for.
   </p>
   <h1 class="text-2xl font-bold">My Skills</h1>
-  <p>Programming Languages: JavaScript, TypeScript, Python, Java, Bash.</p>
+  <p>Programming Languages: TypeScript, JavaScript, Python.</p>
   <p>
     Frontend: Svelte, SvelteKit, React, Preact, Fresh, Next.js, Vue, Nuxt.js, Electron, TailwindCSS,
     SASS.
   </p>
   <p>Backend: node.js, deno.</p>
-  <p>Databases: PostgreSQL, MySQL, MondoDB, Firebase Firestore, redis.</p>
-  <p>Other Technologies: Docker, git, vim, tRPC.</p>
+  <p>Databases: PostgreSQL, MySQL (PlanetScale), MondoDB, Firebase Firestore, redis.</p>
+  <p>Other Technologies: Docker, git, tRPC, GraphQL.</p>
   <p>Non technical: Video editing, Image editing.</p>
   <p>Languages: English, Russian.</p>
   <h1 class="text-2xl font-bold">My other projects</h1>
