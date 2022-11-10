@@ -39,22 +39,16 @@
       </a>
     </div>
   </div>
-  <p>
+  <p class="indent-6">
     I'm a young and aspiring full stack web developer with 4 years of experience with the newest web
     technologies and standards. In every project I like to focus my attention on speed and security,
     making sure every page loads as fast as possible and every attack vector is accounted for.
   </p>
-  <h1 class="text-2xl font-bold">My Skills</h1>
-  <p>Programming Languages: TypeScript, JavaScript, Python.</p>
-  <p>
-    Frontend: Svelte, SvelteKit, React, Preact, Fresh, Next.js, Vue, Nuxt.js, Electron, TailwindCSS,
-    SASS.
-  </p>
-  <p>Backend: node.js, deno.</p>
-  <p>Databases: PostgreSQL, MySQL (PlanetScale), MondoDB, Firebase Firestore, redis.</p>
-  <p>Other Technologies: Docker, git, tRPC, GraphQL.</p>
-  <p>Non technical: Video editing, Image editing.</p>
-  <p>Languages: English, Russian.</p>
+  <a
+    href="http://resume.ronanru.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline text-center text-xl p-1">See my Resume / CV</a>
   <h1 class="text-2xl font-bold">My other projects</h1>
   <div class="flex gap-2">
     <img src={myfaqpageImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
