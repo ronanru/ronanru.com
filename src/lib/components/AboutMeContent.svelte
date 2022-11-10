@@ -5,7 +5,7 @@
   import spworldsImage from '../../assets/projects/spworlds.webp';
   import spdonateImage from '../../assets/projects/spdonate.webp';
   import filmanImage from '../../assets/projects/filman.webp';
-  import { mdiEmail, mdiDiscord, mdiGithub } from '@mdi/js';
+  import { mdiDiscord, mdiGithub, mdiTwitter } from '@mdi/js';
   import avatar from '../../assets/avatar.webp';
   import Icon from './Icon.svelte';
 </script>
@@ -18,7 +18,11 @@
       alt="" />
     <div class="space-y-2">
       <h1 class="text-2xl font-bold">Hello, I'm Matvey!</h1>
-      <a class="flex items-center gap-2" href="https://github.com/ronanru">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2"
+        href="https://github.com/ronanru">
         <Icon icon={mdiGithub} />
         RonanRU
       </a>
@@ -28,28 +32,36 @@
         <Icon icon={mdiDiscord} />
         Ronan#2587
       </button>
-      <a class="flex items-center gap-2 text-[#0088CC]" href="https://t.me/ryabchikovm">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-[#0088CC]"
+        href="https://t.me/ryabchikovm">
         <Icon
           icon="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
         @ryabchikovm
       </a>
-      <a class="flex items-center gap-2 text-orange-600" href="mailto:ronanru@duck.com">
-        <Icon icon={mdiEmail} />
-        ronanru@duck.com
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-[#1DA1F2]"
+        href="https://twitter.com/ryabchikovm">
+        <Icon icon={mdiTwitter} />
+        @ryabchikovm
       </a>
     </div>
   </div>
-  <p class="indent-6">
-    I'm a young and aspiring full stack web developer with 4 years of experience with the newest web
-    technologies and standards. In every project I like to focus my attention on speed and security,
-    making sure every page loads as fast as possible and every attack vector is accounted for.
+  <p class="indent-4">
+    I'm a young and aspiring full stack developer, focused on building great user experiences on the
+    web. In every project I like to focus my attention on speed and security, making sure every page
+    loads as fast as possible and every endpoint is safe and secure.
   </p>
   <a
-    href="http://resume.ronanru.com"
+    href="https://resume.ronanru.com/resume.pdf"
     target="_blank"
     rel="noopener noreferrer"
-    class="underline text-center text-xl p-1">See my Resume / CV</a>
-  <h1 class="text-2xl font-bold">My other projects</h1>
+    class="rounded-md bg-blue-600 py-2 px-4 text-white hover:bg-blue-700 mx-auto">See my Resume</a>
+  <h1 class="text-2xl font-bold">Cool stuff I've built:</h1>
   <div class="flex gap-2">
     <img src={myfaqpageImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
     <div>
