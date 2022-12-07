@@ -66,7 +66,7 @@
     <img src={myfaqpageImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
     <div>
       <h2 class="text-xl font-bold">
-        <a href="https://spworlds.ru">My FAQ Page</a>
+        <a href="https://myfaq.page">My FAQ Page</a>
         <span class="rounded-full border-2 border-green-800 p-1 text-sm font-normal text-green-800">
           Backend
         </span>
