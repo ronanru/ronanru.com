@@ -80,6 +80,10 @@
   $: import(`./assets/wallpapers/${$settings.wallpaper}.webp`).then(d => (wallpaper = d.default));
 </script>
 
+<svelte:head>
+  <link rel="preload" as="image" href={wallpaper} />
+</svelte:head>
+
 <BootOverlay>
   <main
     class="h-screen w-screen bg-cover bg-center bg-no-repeat bg-origin-content text-black dark:text-white"
