@@ -16,7 +16,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl bg-white border-4 border-black hover:bg-black hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-black shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      class="rounded-3xl hover:shadow-xl bg-white border-4 border-black hover:bg-black hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-black shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
       href="https://github.com/ronanru">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon icon={mdiGithub} size={4} />
@@ -26,13 +26,13 @@
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <img
       src={avatar}
-      class="rounded-3xl border-4 border-black shadow-lg aspect-square hover:-translate-y-1 translate-y-0 duration-500"
+      class="rounded-3xl hover:shadow-xl border-4 border-black shadow-lg aspect-square hover:-translate-y-1 translate-y-0 duration-500"
       alt="My profile picture" />
 
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl bg-[#0088CC] border-4 border-[#0088CC] hover:bg-white hover:text-[#0088CC] duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      class="rounded-3xl hover:shadow-xl bg-[#0088CC] border-4 border-[#0088CC] hover:bg-white hover:text-[#0088CC] duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
       href="https://t.me/ryabchikovm">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon
@@ -44,7 +44,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl bg-neutral-900 border-4 border-neutral-900 hover:bg-white hover:text-neutral-900 duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center gap-2"
+      class="rounded-3xl hover:shadow-xl bg-neutral-900 border-4 border-neutral-900 hover:bg-white hover:text-neutral-900 duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center gap-2"
       href="https://blog.ronanru.com">
       <img
         width="112"
@@ -57,7 +57,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl bg-white border-4 border-[#1DA1F2] hover:bg-[#1DA1F2] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#1DA1F2] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      class="rounded-3xl hover:shadow-xl bg-white border-4 border-[#1DA1F2] hover:bg-[#1DA1F2] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#1DA1F2] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
       href="https://twitter.com/ryabchikovm">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon icon={mdiTwitter} size={4} />
@@ -67,7 +67,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl bg-indigo-800 border-4 border-indigo-800 hover:bg-white hover:text-indigo-800 duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      class="rounded-3xl hover:shadow-xl bg-indigo-800 border-4 border-indigo-800 hover:bg-white hover:text-indigo-800 duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
       href="https://resume.ronanru.com/resume.pdf">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon icon={mdiFileDocument} size={4} />
