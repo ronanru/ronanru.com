@@ -16,7 +16,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl border-4 border-black hover:bg-black hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-black shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      class="rounded-3xl bg-white border-4 border-black hover:bg-black hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-black shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
       href="https://github.com/ronanru">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon icon={mdiGithub} size={4} />
@@ -57,7 +57,7 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl border-4 border-[#1DA1F2] hover:bg-[#1DA1F2] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#1DA1F2] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      class="rounded-3xl bg-white border-4 border-[#1DA1F2] hover:bg-[#1DA1F2] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#1DA1F2] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
       href="https://twitter.com/ryabchikovm">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon icon={mdiTwitter} size={4} />
