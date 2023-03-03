@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { mdiWindowClose, mdiWindowMinimize, mdiWindowMaximize } from '@mdi/js';
+  import { mdiWindowClose, mdiArrowTopRightBottomLeftBold, mdiWindowMinimize } from '@mdi/js';
   import { onMount, createEventDispatcher } from 'svelte';
   import { fade } from 'svelte/transition';
   import Icon from './Icon.svelte';
@@ -114,7 +114,7 @@
   <section
     transition:fade
     on:mousedown={() => dispatch('mousedown')}
-    class="absolute bg-white shadow-md transition-opacity dark:bg-zinc-800 {mouseNearClass[
+    class="absolute bg-white overflow-hidden border-2 border-zinc-300 dark:border-zinc-700 shadow-md transition-opacity dark:bg-zinc-800 {mouseNearClass[
       resizing || mouseNear
     ]}"
     class:cursor-move={isDragging}
@@ -125,30 +125,30 @@
     style:height={isMaximized ? 'auto' : `${height}px`}
     style:width={isMaximized ? 'auto' : `${width}px`}>
     <div
-      class="flex rounded-t-lg bg-zinc-100 py-1 px-2 dark:bg-zinc-900"
+      class="flex rounded-t-lg bg-zinc-100 py-1 px-2 dark:bg-zinc-900 border-b-2 border-zinc-300 dark:border-zinc-700 items-center"
       on:mousedown={handleHeaderMousedown}
       on:dblclick={() => (isMaximized = !isMaximized)}>
       <img src={icon} alt="" width="24" height="24" class="mr-2 h-6 w-6" />
       {title}
       <div class="flex-1" />
-      <button
-        on:click={() => (isOpen = false)}
-        class="translate-y-1 text-zinc-500  transition-colors hover:text-green-500"
-        title="Minimize">
-        <Icon icon={mdiWindowMinimize} size={0} />
-      </button>
-      <button
-        on:click={() => (isMaximized = !isMaximized)}
-        class="text-zinc-500 transition-colors hover:text-yellow-500"
-        title="Maximize">
-        <Icon icon={mdiWindowMaximize} size={0} />
-      </button>
-      <button
-        on:click={() => dispatch('close')}
-        class="text-zinc-500 transition-colors hover:text-red-500"
-        title="Close">
-        <Icon icon={mdiWindowClose} size={0} />
-      </button>
+      <div class="flex gap-1 items-center justify-center">
+        <button
+          on:click={() => (isOpen = false)}
+          class="bg-green-500 rounded-full w-4 h-4 text-transparent dark:hover:text-white hover:text-zinc-800 transition-colors grid place-items-center"
+          title="Minimize">
+          <Icon icon={mdiWindowMinimize} size={-1} />
+        </button>
+        <button
+          on:click={() => (isMaximized = !isMaximized)}
+          class="bg-yellow-500 rounded-full w-4 h-4 text-transparent dark:hover:text-white hover:text-zinc-800 transition-colors grid place-items-center"
+          title="Maximize">
+          <Icon icon={mdiArrowTopRightBottomLeftBold} size={-2} /></button>
+        <button
+          on:click={() => dispatch('close')}
+          class="bg-red-500 rounded-full w-4 h-4 text-transparent dark:hover:text-white hover:text-zinc-800 transition-colors grid place-items-center"
+          title="Close">
+          <Icon icon={mdiWindowClose} size={-1} /></button>
+      </div>
     </div>
     <div class="h-[calc(100%_-_2rem)] w-full overflow-auto p-4">
       <slot />
