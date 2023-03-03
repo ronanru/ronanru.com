@@ -12,7 +12,7 @@
 
 <div class="mx-auto flex max-w-lg flex-col gap-4">
   <h1 class="text-4xl font-bold mt-8 text-center mb-4">Hello, I'm Matvey! 👋</h1>
-  <div class="gap-4 flex-wrap grid grid-cols-3">
+  <div class="gap-4 flex-wrap grid grid-cols-[repeat(auto-fill,_minmax(8rem,_1fr))]">
     <a
       target="_blank"
       rel="noopener noreferrer"
