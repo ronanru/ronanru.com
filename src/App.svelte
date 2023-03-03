@@ -88,7 +88,7 @@
   <main
     class="h-screen w-screen bg-cover bg-center bg-no-repeat bg-origin-content text-black dark:text-white"
     style:background-image="url({wallpaper})"
-    on:click={handleClick}>
+    on:mousedown={handleClick}>
     <nav
       class="absolute top-0 bottom-0 left-0 flex h-screen overflow-y-hidden w-16 -translate-x-16 flex-col items-center gap-2 bg-white bg-opacity-80 shadow-md backdrop-blur transition-transform duration-[1500ms] dark:bg-zinc-900 dark:bg-opacity-80"
       class:transform-none={isMounted}>
