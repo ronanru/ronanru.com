@@ -33,13 +33,13 @@
       target="_blank"
       rel="noopener noreferrer"
       class="rounded-3xl hover:shadow-xl bg-[#0088CC] border-4 border-[#0088CC] hover:bg-white hover:text-[#0088CC] duration-500 group transition-all hover:-translate-y-1 translate-y-0 text-white shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
-      href="https://t.me/ryabchikovm">
+      href="https://t.me/matveydotgg">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon
           icon="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z"
           size={4} />
       </div>
-      @ryabchikovm
+      @matveydotgg
     </a>
     <a
       target="_blank"
@@ -58,11 +58,11 @@
       target="_blank"
       rel="noopener noreferrer"
       class="rounded-3xl hover:shadow-xl bg-white border-4 border-[#1DA1F2] hover:bg-[#1DA1F2] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#1DA1F2] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
-      href="https://twitter.com/ryabchikovm">
+      href="https://twitter.com/matveydotgg">
       <div class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
         <Icon icon={mdiTwitter} size={4} />
       </div>
-      @ryabchikovm
+      @matveydotgg
     </a>
     <a
       target="_blank"
