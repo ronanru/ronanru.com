@@ -2,12 +2,39 @@
   import svelteFlipClockImage from '../../assets/projects/svelte-flip-clock.webp';
   import archexplorerImage from '../../assets/projects/archexplorer.webp';
   import myfaqpageImage from '../../assets/projects/myfaqpage.webp';
-  import spdonateImage from '../../assets/projects/spdonate.webp';
-  import filmanImage from '../../assets/projects/filman.webp';
+  import mcSlImage from '../../assets/projects/mc-sl.webp';
   import { mdiGithub, mdiTwitter, mdiFileDocument } from '@mdi/js';
   import avatar from '../../assets/avatar.webp';
   import blogIcon from '../../assets/peppo.webp';
   import Icon from './Icon.svelte';
+
+  const projects = [
+    {
+      image: myfaqpageImage,
+      title: 'MyFAQPage',
+      link: 'https://myfaqpage.com',
+      description: 'A simple FAQ page for your website.'
+    },
+    {
+      image: mcSlImage,
+      title: 'Minecraft Stats Leaderboard',
+      link: 'https://github.com/ronanru/mc_stats_leaderboard',
+      description:
+        'View statistics leaderboards for your Minecraft worlds or server in the browser.'
+    },
+    {
+      image: archexplorerImage,
+      title: 'ArchExplorer',
+      link: 'https://archexplorer.ronanru.dev',
+      description: 'A simple file explorer for Arch Linux.'
+    },
+    {
+      image: svelteFlipClockImage,
+      title: 'Svelte Flip Clock',
+      link: 'https://svelte-flip-clock.ronanru.dev/',
+      description: 'A simple flip clock component for Svelte.'
+    }
+  ];
 </script>
 
 <div class="mx-auto flex max-w-lg flex-col gap-4">
@@ -76,62 +103,15 @@
     </a>
   </div>
   <h1 class="text-4xl font-bold mt-8 mb-4 text-center">Cool stuff I've built:</h1>
-  <div class="flex gap-2">
-    <img src={myfaqpageImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
-    <div>
-      <h2 class="text-lg font-bold">
-        <a href="https://myfaq.page">My FAQ Page</a>
-      </h2>
-      <p>
-        A web app where anyone can create a beautiful FAQ page in minutes. I used new and trendy T3
-        stack for this site: Next.js, TypeScript, tRPC, Prisma.
-      </p>
+  {#each projects as project}
+    <div class="flex gap-2">
+      <img src={project.image} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
+      <div>
+        <h2 class="text-lg font-bold">
+          <a href={project.link}>{project.title}</a>
+        </h2>
+        <p>{project.description}</p>
+      </div>
     </div>
-  </div>
-  <div class="flex gap-2">
-    <img
-      src={svelteFlipClockImage}
-      height="270"
-      width="480"
-      class="aspect-video w-48 rounded"
-      alt="" />
-    <div>
-      <h2 class="text-lg font-bold">
-        <a href="https://svelte-flip-clock.ronanru.dev/">Svelte Flip Clock</a>
-      </h2>
-      <p>A flip clock component for Svelte (svelte-flip-clock on npm)</p>
-    </div>
-  </div>
-  <div class="flex gap-2">
-    <img
-      src={archexplorerImage}
-      height="270"
-      width="480"
-      class="aspect-video w-48 rounded"
-      alt="" />
-    <div>
-      <h2 class="text-lg font-bold">
-        <a href="https://archexplorer.ronanru.dev">ArchExplorer</a>
-      </h2>
-      <p>A search engine for Arch Linux packages with minimal client-side JavaScript.</p>
-    </div>
-  </div>
-  <div class="flex gap-2">
-    <img src={filmanImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
-    <div>
-      <h2 class="text-lg font-bold">
-        <a href="https://github.com/ronanru/filman">Filman</a>
-      </h2>
-      <p>A TUI file manager for Linux created with Deno and TypeScript with 0 dependencies.</p>
-    </div>
-  </div>
-  <div class="flex gap-2">
-    <img src={spdonateImage} height="270" width="480" class="aspect-video w-48 rounded" alt="" />
-    <div>
-      <h2 class="text-lg font-bold">
-        <a href="https://spdonate.ronanru.dev">SPDonate</a>
-      </h2>
-      <p>A website for streamers to collect donations with real-time alerts.</p>
-    </div>
-  </div>
+  {/each}
 </div>

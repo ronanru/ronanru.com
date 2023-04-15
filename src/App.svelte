@@ -86,7 +86,7 @@
 
 <BootOverlay>
   <main
-    class="h-screen w-screen bg-cover bg-center bg-no-repeat bg-origin-content text-black dark:text-white"
+    class="h-screen w-screen select-none bg-cover bg-center bg-no-repeat bg-origin-content text-black dark:text-white"
     style:background-image="url({wallpaper})"
     on:mousedown={handleClick}>
     <nav

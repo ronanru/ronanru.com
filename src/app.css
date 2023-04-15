@@ -5,3 +5,7 @@
 * {
   @apply outline-none;
 }
+
+html.dark {
+  color-scheme: dark;
+}
