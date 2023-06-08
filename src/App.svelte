@@ -81,7 +81,9 @@
 </script>
 
 <svelte:head>
-  <link rel="preload" as="image" href={wallpaper} />
+  {#if wallpaper}
+    <link rel="preload" as="image" href={wallpaper} />
+  {/if}
 </svelte:head>
 
 <BootOverlay>

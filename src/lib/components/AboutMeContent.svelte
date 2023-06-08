@@ -2,6 +2,7 @@
   import svelteFlipClockImage from '../../assets/projects/svelte-flip-clock.webp';
   import archexplorerImage from '../../assets/projects/archexplorer.webp';
   import myfaqpageImage from '../../assets/projects/myfaqpage.webp';
+  import unopackImage from '../../assets/projects/unopack.webp';
   import mcSlImage from '../../assets/projects/mc-sl.webp';
   import { mdiGithub, mdiTwitter, mdiFileDocument } from '@mdi/js';
   import avatar from '../../assets/avatar.webp';
@@ -9,6 +10,12 @@
   import Icon from './Icon.svelte';
 
   const projects = [
+    {
+      image: unopackImage,
+      title: 'UnoPack',
+      link: 'https://unopack.net',
+      description: 'Minecraft modpack generator.'
+    },
     {
       image: myfaqpageImage,
       title: 'MyFAQPage',
