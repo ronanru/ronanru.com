@@ -62,11 +62,14 @@
       windows = windows.map(w => (w.id === id ? { ...w, isOpen: !w.isOpen } : w));
       setTimeout(() => (windows = windows.filter(w => w.id !== id)), 500);
     },
-    openWindow = (type: WindowData['type'], detail = null) =>
-      (windows = [...windows, { id: generateId(), isOpen: true, type, detail }]),
+    openWindow = (type: string, detail = null) =>
+      (windows = [
+        ...windows,
+        { id: generateId(), isOpen: true, type: type as WindowData['type'], detail }
+      ]),
     focusWindow = (id: string) => {
-      if (windows.at(-1).id === id) return;
-      windows = [...windows.filter(w => w.id !== id), windows.find(w => w.id === id)];
+      if (windows.at(-1)?.id === id) return;
+      windows = [...windows.filter(w => w.id !== id), windows.find(w => w.id === id)!];
     };
 
   setContext('openWindow', openWindow);
@@ -87,12 +90,13 @@
 </svelte:head>
 
 <BootOverlay>
+  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <main
     class="h-screen w-screen select-none bg-cover bg-center bg-no-repeat bg-origin-content text-black dark:text-white"
     style:background-image="url({wallpaper})"
     on:mousedown={handleClick}>
     <nav
-      class="absolute top-0 bottom-0 left-0 flex h-screen overflow-y-hidden w-16 -translate-x-16 flex-col items-center gap-2 bg-white bg-opacity-80 shadow-md backdrop-blur transition-transform duration-[1500ms] dark:bg-zinc-900 dark:bg-opacity-80"
+      class="absolute top-0 bottom-0 left-0 flex h-screen overflow-y-hidden w-16 -translate-x-16 flex-col items-center gap-2 bg-white/90 shadow-lg backdrop-blur-md transition-transform duration-[1500ms] dark:bg-zinc-900/90"
       class:transform-none={isMounted}>
       <button
         on:click={() => (isStartMenuOpen = !isStartMenuOpen)}

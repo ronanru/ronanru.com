@@ -73,11 +73,12 @@
   bind:isOpen
   on:close={() => dispatch('close')}
   on:mousedown={() => dispatch('mousedown')}>
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
     on:keypress={e => handleButton(e.key)}
     class="flex h-full flex-col items-center justify-center gap-4 text-center text-2xl">
     <p
-      class="flex h-24 w-full items-center justify-end rounded-lg bg-zinc-200 p-4 dark:bg-zinc-900">
+      class="flex h-24 w-full items-center justify-end rounded-lg bg-zinc-200 p-4 dark:bg-zinc-800">
       {display}
     </p>
     <div class="grid h-full w-full grid-cols-4 gap-4">

@@ -31,7 +31,7 @@
   on:close={() => dispatch('close')}
   on:mousedown={() => dispatch('mousedown')}>
   <div class="flex h-full flex-col">
-    <div class="mb-4 resize-none rounded-lg bg-zinc-200 py-2 px-4 dark:bg-zinc-900">
+    <div class="mb-4 resize-none rounded-lg bg-zinc-200 py-2 px-4 dark:bg-zinc-800">
       <button on:click={saveFile}>Save</button>
     </div>
     <textarea bind:value class="mx-2 h-full w-[calc(100%_-_1rem)] flex-1 bg-transparent" />

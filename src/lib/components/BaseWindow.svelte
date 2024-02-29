@@ -111,10 +111,11 @@
   bind:innerWidth />
 
 {#if isOpen}
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <section
     transition:fade
     on:mousedown={() => dispatch('mousedown')}
-    class="absolute bg-white overflow-hidden border-2 border-zinc-300 dark:border-zinc-700 shadow-md transition-opacity dark:bg-zinc-800 {mouseNearClass[
+    class="absolute bg-white overflow-hidden shadow-xl transition-opacity dark:bg-zinc-900 {mouseNearClass[
       resizing || mouseNear
     ]}"
     class:cursor-move={isDragging}
@@ -125,7 +126,7 @@
     style:height={isMaximized ? 'auto' : `${height}px`}
     style:width={isMaximized ? 'auto' : `${width}px`}>
     <div
-      class="flex rounded-t-lg bg-zinc-100 py-1 px-2 dark:bg-zinc-900 border-b-2 border-zinc-300 dark:border-zinc-700 items-center"
+      class="flex rounded-t-lg bg-zinc-100 py-1 px-2 dark:bg-zinc-800 items-center"
       on:mousedown={handleHeaderMousedown}
       on:dblclick={() => (isMaximized = !isMaximized)}>
       <img src={icon} alt="" width="24" height="24" class="mr-2 h-6 w-6" />

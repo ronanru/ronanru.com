@@ -75,13 +75,13 @@
         New game
       </button>
     {/if}
-    <div class="grid grid-cols-10 border border-black dark:border-white">
+    <div class="grid grid-cols-10 border border-black dark:border-zinc-800">
       {#each board as row, i}
         {#each row as cell, j}
           <button
             on:click={() => openCell(i, j)}
             on:contextmenu|preventDefault={() => toggleFlag(i, j)}
-            class="grid h-8 w-8 place-items-center border border-black font-bold dark:border-white"
+            class="grid h-8 w-8 place-items-center border border-black font-bold dark:border-zinc-800"
             class:text-blue-600={cell.isOpen && cell.value === 1}
             class:text-green-600={cell.isOpen && cell.value === 2}
             class:text-yellow-600={cell.isOpen && cell.value === 3}

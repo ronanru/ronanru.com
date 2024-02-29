@@ -28,7 +28,7 @@
       <select
         bind:value={$settings.theme}
         id="themeInput"
-        class="rounded-md bg-zinc-300 p-2 dark:bg-zinc-900">
+        class="rounded-md bg-zinc-300 p-2 dark:bg-zinc-800">
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </select>
