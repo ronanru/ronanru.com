@@ -1,23 +1,33 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
-  import { createRecord, getFromPath } from '../fs';
-  import icon from '../../assets/icons/notepad.svg';
-  import BaseWindow from './BaseWindow.svelte';
+  import { onMount } from "svelte";
+  import icon from "../../assets/icons/notepad.svg";
+  import { createRecord, getFromPath } from "../fs";
+  import BaseWindow from "./BaseWindow.svelte";
 
-  const dispatch = createEventDispatcher(),
-    saveFile = () => {
-      if (!detail) {
-        const name = prompt('Name of the file:');
-        if (!name) return;
-        if (!/[0-9a-zA-Z]+/.test(name)) return alert('Error: non-allowed characters');
-        detail = [`${name}.txt`];
-      }
-      createRecord(detail, value);
-    };
+  const saveFile = () => {
+    if (!detail) {
+      const name = prompt("Name of the file:");
+      if (!name) return;
+      if (!/[0-9a-zA-Z]+/.test(name))
+        return alert("Error: non-allowed characters");
+      detail = [`${name}.txt`];
+    }
+    createRecord(detail, value);
+  };
 
-  export let isOpen: boolean, detail: string[] | null | undefined;
+  let {
+    isOpen = $bindable(),
+    onclose,
+    onpointerdown,
+    detail,
+  }: {
+    isOpen: boolean;
+    onclose: () => void;
+    onpointerdown: () => void;
+    detail: string[] | null | undefined;
+  } = $props();
 
-  let value = '';
+  let value = $state("");
 
   onMount(() => detail && (value = getFromPath(detail) as string));
 </script>
@@ -28,12 +38,16 @@
   height={500}
   width={600}
   bind:isOpen
-  on:close={() => dispatch('close')}
-  on:mousedown={() => dispatch('mousedown')}>
+  {onclose}
+  {onpointerdown}>
   <div class="flex h-full flex-col">
-    <div class="mb-4 resize-none rounded-lg bg-zinc-200 py-2 px-4 dark:bg-zinc-800">
-      <button on:click={saveFile}>Save</button>
+    <div
+      class="mb-4 resize-none rounded-lg bg-zinc-200 py-2 px-4 dark:bg-zinc-800">
+      <button onclick={saveFile}>Save</button>
     </div>
-    <textarea bind:value class="mx-2 h-full w-[calc(100%_-_1rem)] flex-1 bg-transparent" />
+    <textarea
+      bind:value
+      class="mx-2 h-full w-[calc(100%_-_1rem)] flex-1 bg-transparent"
+    ></textarea>
   </div>
 </BaseWindow>

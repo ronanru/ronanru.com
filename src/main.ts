@@ -1,9 +1,8 @@
-import './app.css';
-import '@fontsource/ubuntu/latin.css';
-import App from './App.svelte';
+import "@fontsource/ubuntu/latin.css";
+import { mount } from "svelte";
+import App from "./App.svelte";
+import "./app.css";
 
-const app = new App({
-  target: document.getElementById('app')
+mount(App, {
+  target: document.getElementById("app")!,
 });
-
-export default app;
