@@ -43,8 +43,8 @@
   let isMounted = $state(false);
 
   onMount(() => {
-    y = (innerHeight - height) / 2;
-    x = (innerWidth - width) / 2;
+    y = (innerHeight - height) / 2 + Math.random() * 50;
+    x = (innerWidth - width) / 2 + Math.random() * 50;
     lastX = x;
     lastY = y;
     isMounted = true;
