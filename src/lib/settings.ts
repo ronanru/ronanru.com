@@ -1,14 +1,23 @@
 import { writable } from "svelte/store";
 
-export const settings = writable<{
+const settingsFromLocalStorage = localStorage.getItem("settings");
+let settingsValue: {
   theme: "light" | "dark";
   wallpaper: number;
-}>(
-  JSON.parse(localStorage.getItem("settings") || "") || {
-    theme: "light",
-    wallpaper: 0 | 1 | 2 | 3,
-  },
-);
+} = {
+  theme: "light",
+  wallpaper: 0,
+};
+
+if (settingsFromLocalStorage) {
+  try {
+    settingsValue = JSON.parse(settingsFromLocalStorage);
+  } catch (e) {
+    console.error("Error parsing settings from local storage:", e);
+  }
+}
+
+export const settings = writable(settingsValue);
 
 settings.subscribe((v) => {
   localStorage.setItem("settings", JSON.stringify(v));
