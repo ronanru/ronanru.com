@@ -182,17 +182,17 @@
     <StartMenu bind:isOpen={isStartMenuOpen} {openWindow} />
     <Calendar bind:isOpen={isCalendarOpen} />
     {#each windows as window (window.id)}
-      <svelte:component
-        this={{
-          welcome: WelcomeWindow,
-          aboutme: AboutMeWindow,
-          terminal: TerminalWindow,
-          settings: SettingsWindow,
-          minesweeper: MinesweeperWindow,
-          filemanager: FileManagerWindow,
-          notepad: NotepadWindow,
-          calculator: CalculatorWindow,
-        }[window.type]}
+      {@const Component = {
+        welcome: WelcomeWindow,
+        aboutme: AboutMeWindow,
+        terminal: TerminalWindow,
+        settings: SettingsWindow,
+        minesweeper: MinesweeperWindow,
+        filemanager: FileManagerWindow,
+        notepad: NotepadWindow,
+        calculator: CalculatorWindow,
+      }[window.type]}
+      <Component
         bind:isOpen={window.isOpen}
         detail={window.detail}
         onclose={() => closeWindow(window.id)}
