@@ -54,13 +54,18 @@
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="rounded-3xl hover:shadow-xl bg-white border-4 border-[#1DA1F2] hover:bg-[#1DA1F2] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#1DA1F2] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
-      href="https://twitter.com/matveydev">
+      class="rounded-3xl hover:shadow-xl bg-white border-4 border-[#0085ff] hover:bg-[#0085ff] hover:-translate-y-1 translate-y-0 duration-500 hover:text-white transition-all group text-[#0085ff] shadow-lg aspect-square flex flex-col text-lg justify-center items-center"
+      href="https://bsky.app/profile/matvey.dev">
       <div
         class="group-hover:-rotate-6 group-hover:scale-110 transition-transform duration-500">
-        <Icon icon={mdiTwitter} size={4} />
+        <svg fill="none" viewBox="0 0 64 57" width="80" height="80"
+          ><path
+            fill="currentColor"
+            d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
+          ></path
+          ></svg>
       </div>
-      @matveydev
+      @matvey.dev
     </a>
     <a
       target="_blank"
