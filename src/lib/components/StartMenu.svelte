@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { scale } from "svelte/transition";
   import aboutMeIcon from "../../assets/icons/about-me.svg";
   import calculatorIcon from "../../assets/icons/calculator.svg";
   import fileManagerIcon from "../../assets/icons/file-manager.svg";
@@ -17,6 +16,8 @@
     openWindow: (type: string) => void;
   } = $props();
 
+  let section: HTMLElement;
+
   const programs = [
     { name: "welcome", title: "Welcome", icon: welcomeIcon },
     { name: "aboutme", title: "About Me", icon: aboutMeIcon },
@@ -30,6 +31,7 @@
 </script>
 
 <section
+  bind:this={section}
   id="start-menu"
   popover="auto"
   class="left-18 z-10000 grid top-2 scale-90 opacity-0 transition-all transition-discrete ease-out open:scale-100 open:opacity-100 starting:open:scale-90 starting:open:opacity-0 origin-top-left gap-2 rounded-lg bg-white p-2 dark:bg-zinc-900">
@@ -37,6 +39,7 @@
     <button
       onclick={() => {
         openWindow(program.name);
+        section.hidePopover();
       }}
       class="flex items-center justify-start gap-4 rounded-lg py-2 px-4 text-xl hover:bg-blue-200 dark:hover:bg-blue-900">
       <img src={program.icon} width="40" height="40" class="h-10 w-10" alt="" />
