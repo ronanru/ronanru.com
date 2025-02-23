@@ -11,7 +11,6 @@
   import welcomeIcon from "../../assets/icons/welcome.svg";
 
   let {
-    isOpen = $bindable(),
     openWindow,
   }: {
     isOpen: boolean;
@@ -30,31 +29,24 @@
   ];
 </script>
 
-{#if isOpen}
-  <section
-    transition:scale
-    class="startmenu absolute top-0 left-16 z-10000 grid origin-top-left gap-2 rounded-br-lg bg-white/90 p-2 backdrop-blur-md dark:bg-zinc-900/90">
-    {#each programs as program}
-      <button
-        onclick={() => {
-          openWindow(program.name);
-          isOpen = false;
-        }}
-        class="flex items-center justify-start gap-4 rounded-lg py-2 px-4 text-xl hover:bg-blue-200 dark:hover:bg-blue-900">
-        <img
-          src={program.icon}
-          width="40"
-          height="40"
-          class="h-10 w-10"
-          alt="" />
-        {program.title}
-      </button>
-    {/each}
+<section
+  id="start-menu"
+  popover="auto"
+  class="left-18 z-10000 grid top-2 scale-90 opacity-0 transition-all transition-discrete ease-out open:scale-100 open:opacity-100 starting:open:scale-90 starting:open:opacity-0 origin-top-left gap-2 rounded-lg bg-white p-2 dark:bg-zinc-900">
+  {#each programs as program}
     <button
-      onclick={() => location.reload()}
+      onclick={() => {
+        openWindow(program.name);
+      }}
       class="flex items-center justify-start gap-4 rounded-lg py-2 px-4 text-xl hover:bg-blue-200 dark:hover:bg-blue-900">
-      <img src={rebootIcon} width="40" height="40" class="h-10 w-10" alt="" />
-      Reboot
+      <img src={program.icon} width="40" height="40" class="h-10 w-10" alt="" />
+      {program.title}
     </button>
-  </section>
-{/if}
+  {/each}
+  <button
+    onclick={() => location.reload()}
+    class="flex items-center justify-start gap-4 rounded-lg py-2 px-4 text-xl hover:bg-blue-200 dark:hover:bg-blue-900">
+    <img src={rebootIcon} width="40" height="40" class="h-10 w-10" alt="" />
+    Reboot
+  </button>
+</section>

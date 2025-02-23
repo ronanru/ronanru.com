@@ -30,6 +30,10 @@
   @apply outline-hidden;
 }
 
+button:not([disabled]) {
+  cursor: pointer;
+}
+
 html.dark {
   color-scheme: dark;
 }
