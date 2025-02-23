@@ -138,7 +138,7 @@
           onclick={() =>
             (windows = windows.map((w) =>
               w.id === window.id ? { ...w, isOpen: !w.isOpen } : w,
-            ))g>
+            ))}>
           <img
             src={{
               welcome: welcomeIcon,
