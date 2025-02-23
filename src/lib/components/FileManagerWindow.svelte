@@ -133,7 +133,7 @@
     class=" h-[calc(100%_-_5rem)]"
     oncontextmenu={handleFileContextMenu as unknown as MouseEventHandler<HTMLDivElement>}>
     <div
-      class="grid w-full grid-cols-[repeat(auto-fill,_minmax(5rem,_1fr))] gap-4">
+      class="grid w-full grid-cols-[repeat(auto-fill,minmax(5rem,1fr))] gap-4">
       {#each files as file}
         <button
           onclick={() => ([selectedItem] = file)}

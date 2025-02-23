@@ -33,7 +33,7 @@
 {#if isOpen}
   <section
     transition:scale
-    class="startmenu absolute top-0 left-16 z-[10000] grid origin-top-left gap-2 rounded-br-lg bg-white/90 p-2 backdrop-blur-md dark:bg-zinc-900/90">
+    class="startmenu absolute top-0 left-16 z-10000 grid origin-top-left gap-2 rounded-br-lg bg-white/90 p-2 backdrop-blur-md dark:bg-zinc-900/90">
     {#each programs as program}
       <button
         onclick={() => {

@@ -28,7 +28,7 @@
     <div class="space-y-6 w-full">
       <h1 class="text-6xl grid font-bold">
         <span
-          class="bg-gradient-to-tl from-indigo-800 dark:from-indigo-600 dark:to-blue-400 to-blue-600 bg-clip-text text-transparent">
+          class="bg-linear-to-tl from-indigo-800 dark:from-indigo-600 dark:to-blue-400 to-blue-600 bg-clip-text text-transparent">
           Hi there,
         </span>
         I'm Matvey

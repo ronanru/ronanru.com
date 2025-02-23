@@ -179,7 +179,7 @@
       bind:this={input}
       onkeydown={handleKeydown}
       type="text"
-      class="bg-transparent pb-2 font-mono outline-none"
+      class="bg-transparent pb-2 font-mono outline-hidden"
       bind:value
       oninput={() => {
         if (!value.startsWith("$ ")) value = "$ ";

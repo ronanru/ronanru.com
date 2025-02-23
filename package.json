@@ -11,23 +11,23 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tsconfig/svelte": "^5.0.4",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.7",
-    "prettier-plugin-tailwindcss": "^0.6.8",
-    "svelte": "5.1.12",
-    "svelte-check": "^4.0.5",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "svelte": "5.20.2",
+    "svelte-check": "^4.1.4",
     "svelte-preprocess": "^6.0.3",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^4.0.8",
     "tslib": "^2.8.1",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.10"
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1"
   },
   "dependencies": {
-    "@fontsource/ubuntu": "^5.1.0",
+    "@fontsource/ubuntu": "^5.1.1",
     "@mdi/js": "^7.4.47"
   },
   "prettier": {
@@ -36,5 +36,6 @@
       "prettier-plugin-svelte"
     ],
     "bracketSameLine": true
-  }
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }

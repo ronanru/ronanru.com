@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { mdiGithub, mdiTwitter, mdiFileDocument } from "@mdi/js";
+  import { mdiGithub, mdiFileDocument } from "@mdi/js";
   import avatar from "../../assets/avatar.webp";
   import blogIcon from "../../assets/peppo.webp";
   import Icon from "./Icon.svelte";
@@ -8,7 +8,7 @@
 <div class="mx-auto flex max-w-lg flex-col gap-4">
   <h1 class="text-4xl font-bold mt-8 text-center mb-4">Hey, I'm Matvey! 👋</h1>
   <div
-    class="gap-4 flex-wrap grid grid-cols-[repeat(auto-fill,_minmax(8rem,_1fr))]">
+    class="gap-4 flex-wrap grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))]">
     <a
       target="_blank"
       rel="noopener noreferrer"
