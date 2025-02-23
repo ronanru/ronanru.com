@@ -5,7 +5,7 @@
     mdiWindowMinimize,
   } from "@mdi/js";
   import { onMount, type Snippet } from "svelte";
-  import { fade, scale } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import Icon from "./Icon.svelte";
 
   type ResizeMode = "tl" | "tr" | "bl" | "br" | "t" | "r" | "b" | "l" | "";
@@ -40,14 +40,12 @@
   let isMaximized = $state(false);
   let mouseNear = $state<ResizeMode>("");
   let resizing = $state<ResizeMode>("");
-  let isMounted = $state(false);
 
   onMount(() => {
     y = (innerHeight - height) / 2 + Math.random() * 50;
     x = (innerWidth - width) / 2 + Math.random() * 50;
     lastX = x;
     lastY = y;
-    isMounted = true;
   });
 
   const handleHeaderMousedown = (e: MouseEvent) => {
@@ -141,13 +139,12 @@
   bind:innerHeight
   bind:innerWidth />
 
-{#if isOpen && isMounted}
+{#if isOpen}
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <section
-    out:fade
-    in:scale
+    out:fade={{ duration: 150 }}
     {onpointerdown}
-    class="absolute bg-white overflow-hidden shadow-xl transition-[opacity,transform] dark:bg-zinc-900 {mouseNearClass[
+    class="absolute bg-white starting:scale-95 transition-[scale,opacity] starting:opacity-0 ease-out overflow-hidden shadow-xl dark:bg-zinc-900 {mouseNearClass[
       resizing || mouseNear
     ]}"
     class:cursor-move={isDragging}

@@ -49,19 +49,10 @@
       hour: "numeric",
     }),
   );
-  let isMounted = $state(false);
   let isStartMenuOpen = $state(false);
   let isCalendarOpen = $state(false);
   let windows = $state<WindowData[]>([]);
 
-  const idChars =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  const generateId = () => {
-    let result = "";
-    for (let i = 0; i < 12; i++)
-      result += idChars.charAt(Math.floor(Math.random() * idChars.length));
-    return result;
-  };
   const handleClick = (e: MouseEvent & { target: HTMLElement }) => {
     if (!e.target.closest(".startmenu")) isStartMenuOpen = false;
     if (!e.target.closest(".calendar")) isCalendarOpen = false;
@@ -76,7 +67,7 @@
     windows = [
       ...windows,
       {
-        id: generateId(),
+        id: crypto.randomUUID(),
         isOpen: true,
         type: type as WindowData["type"],
         detail,
@@ -95,9 +86,11 @@
 
   let interval: ReturnType<typeof setInterval>;
   onMount(() => {
-    setTimeout(() => (isMounted = true), 2300);
     setTimeout(
-      () => (windows = [{ type: "welcome", id: generateId(), isOpen: true }]),
+      () =>
+        (windows = [
+          { type: "welcome", id: crypto.randomUUID(), isOpen: true },
+        ]),
       2800,
     );
     interval = setInterval(
@@ -131,8 +124,7 @@
     style:background-image="url({wallpaper})"
     onclick={handleClick as unknown as MouseEventHandler<HTMLElement>}>
     <nav
-      class="absolute top-0 bottom-0 left-0 flex h-screen overflow-y-hidden w-16 -translate-x-16 flex-col items-center gap-2 bg-white/90 shadow-lg backdrop-blur-md transition-transform duration-[1500ms] dark:bg-zinc-900/90"
-      class:transform-none={isMounted}>
+      class="absolute top-0 bottom-0 left-0 flex h-screen overflow-y-hidden w-16 starting:-translate-x-16 flex-col items-center gap-2 bg-white/90 shadow-lg delay-1000 backdrop-blur-md transition-transform duration-[1500ms] dark:bg-zinc-900/90">
       <button
         onclick={() => (isStartMenuOpen = !isStartMenuOpen)}
         class="startmenu rounded-lg p-1 hover:bg-blue-100 active:bg-blue-200 dark:hover:bg-blue-900">
@@ -146,7 +138,7 @@
           onclick={() =>
             (windows = windows.map((w) =>
               w.id === window.id ? { ...w, isOpen: !w.isOpen } : w,
-            ))}>
+            ))g>
           <img
             src={{
               welcome: welcomeIcon,
