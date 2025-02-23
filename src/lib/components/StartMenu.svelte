@@ -12,7 +12,6 @@
   let {
     openWindow,
   }: {
-    isOpen: boolean;
     openWindow: (type: string) => void;
   } = $props();
 
@@ -34,7 +33,7 @@
   bind:this={section}
   id="start-menu"
   popover="auto"
-  class="left-18 z-10000 grid top-2 scale-90 opacity-0 transition-all transition-discrete ease-out open:scale-100 open:opacity-100 starting:open:scale-90 starting:open:opacity-0 origin-top-left gap-2 rounded-lg bg-white p-2 dark:bg-zinc-900">
+  class="left-18 z-10000 grid top-2 scale-95 opacity-0 transition-all transition-discrete ease-out open:scale-100 open:opacity-100 starting:open:scale-95 starting:open:opacity-0 origin-top-left gap-2 rounded-lg bg-white p-2 dark:bg-zinc-900">
   {#each programs as program}
     <button
       onclick={() => {

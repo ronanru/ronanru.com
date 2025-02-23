@@ -41,6 +41,7 @@
       | "notepad"
       | "calculator";
     detail?: string[] | null;
+    createdAt: number;
   };
 
   let time = $state(
@@ -69,6 +70,7 @@
         isOpen: true,
         type: type as WindowData["type"],
         detail,
+        createdAt: Date.now(),
       },
     ];
   };
@@ -87,7 +89,12 @@
     setTimeout(
       () =>
         (windows = [
-          { type: "welcome", id: crypto.randomUUID(), isOpen: true },
+          {
+            type: "welcome",
+            id: crypto.randomUUID(),
+            isOpen: true,
+            createdAt: Date.now(),
+          },
         ]),
       2800,
     );
@@ -128,7 +135,7 @@
         class="startmenu rounded-lg p-1 hover:bg-blue-100 active:bg-blue-200 dark:hover:bg-blue-900">
         <Icon icon={mdiMenu} size={3} />
       </button>
-      {#each windows as window (window.id)}
+      {#each windows.toSorted((a, b) => a.createdAt - b.createdAt) as window (window.id)}
         <button
           class="rounded-lg p-2"
           class:bg-blue-200={window.isOpen}
